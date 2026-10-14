@@ -3,16 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0311 - Resume & Portfolio</title>
+    <title>송우섭 (USEOP0311)</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+    <script>
+        /**
+         * ============================================================================
+         * ✏️ 웹사이트 데이터 설정 (여기만 수정하면 화면에 자동으로 반영됩니다!)
+         * ============================================================================
+         * HTML 태그를 건드리지 않고 아래 항목만 추가·수정하면 디자인이 자동 적용됩니다.
+         */
+        const SITE_DATA = {
+            // 1. 상단 로고 텍스트 및 푸터 저작권 표기
+            brand: "USEOP0311",
+            copyrightName: "Useop Song (0311)",
+
+            // 2. 첫 화면에서 타자 치듯 타이핑될 문구 (배열의 각 줄이 줄바꿈되어 타이핑됩니다)
+            typingLines: [
+                "안녕하세요,",
+                "대구일과학고등학교 16기 송우섭입니다."
+            ],
+
+            // 3. 타이핑 속도 설정 (밀리초 단위, 숫자가 작을수록 빠름)
+            typingSpeed: {
+                charDelay: 32,       // 자음/모음 한 타당 속도 (ms)
+                linePause: 220,      // 첫 줄 타이핑 후 줄바꿈 전 잠깐 멈추는 시간 (ms)
+                revealDelay: 180     // 타이핑 완료 후 주변 메뉴·오른쪽 섹션이 뜨기까지의 대기 시간 (ms)
+            },
+
+            // 4. 왼쪽 소개 (About) 및 연락처 설정
+            about: {
+                // 소개 문구 (여러 문단을 넣고 싶다면 배열에 문자열을 추가하세요. 비워두려면 [] 로 설정)
+                paragraphs: [
+                    "대구일과학고등학교 16기에 재학 중이며, 알고리즘과 문제 해결에 관심이 많습니다."
+                ],
+                // 연락처 및 소셜 링크 (클릭 가능한 하이퍼링크 카드로 생성됩니다)
+                links: [
+                    {
+                        type: "Email",
+                        label: "useop@0311.kr",
+                        url: "mailto:useop@0311.kr",
+                        icon: "email"
+                    },
+                    {
+                        type: "GitHub",
+                        label: "github.com/useop0311",
+                        url: "https://github.com/useop0311",
+                        icon: "github"
+                    },
+                    {
+                        type: "Instagram",
+                        label: "@useop0311",
+                        url: "https://instagram.com/useop0311",
+                        icon: "instagram"
+                    }
+                ]
+            },
+
+            // 5. 오른쪽 경력 및 활동 (Experience) 섹션 목록
+            // 항목을 추가하려면 { title: "...", subtitle: "...", period: "...", details: [...] } 블록을 복사해서 붙여넣으세요.
+            experiences: [
+                {
+                    title: "대구일과학고등학교 16기",
+                    subtitle: "Daegu IL Science High School",
+                    period: "재학",
+                    details: []
+                },
+                {
+                    title: "국제정보올림피아드 제36기 여름학교",
+                    subtitle: "IOI KOREA 36th Summer School",
+                    period: "2026",
+                    details: []
+                }
+                /* [추가 예시] 주석(/* * /)을 지우고 내용을 수정해 사용하세요.
+                ,{
+                    title: "활동 또는 경력 이름",
+                    subtitle: "역할 또는 소속 동아리/부서 (생략 가능)",
+                    period: "2026.03 - 현재",
+                    details: [
+                        "세부 활동 내용 1",
+                        "세부 활동 내용 2"
+                    ]
+                }
+                */
+            ],
+
+            // 6. 오른쪽 수상 내역 (Awards) 섹션 목록
+            // 항목을 추가하려면 아래 { ... } 블록을 복사해서 쉼표(,)로 이어 붙이세요.
+            awards: [
+                {
+                    title: "2025 KOI 1차대회 지역은상",
+                    subtitle: "한국정보올림피아드 (KOI)",
+                    date: "2025",
+                    details: []
+                }
+                /* [추가 예시] 주석(/* * /)을 지우고 내용을 수정해 사용하세요.
+                ,{
+                    title: "대회 또는 수상 명칭",
+                    subtitle: "주최 기관 또는 부문 (생략 가능)",
+                    date: "2026.05",
+                    details: [
+                        "수상 관련 부가 설명이 필요하면 여기에 작성"
+                    ]
+                }
+                */
+            ]
+        };
+    </script>
+
     <style>
         :root {
-            --bg-color: #ffffff;
-            --sidebar-bg: #f3f4f6;
-            --text-color: #1f2937;
+            --bg-color: #f8f9fb;
+            --surface-color: #ffffff;
+            --surface-subtle: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
             --accent-color: #2563eb;
-            --border-color: #e5e7eb;
-            --text-muted: #6b7280;
-            --skill-bg: #e5e7eb;
+            --accent-soft: #eff6ff;
+            --border-color: rgba(15, 23, 42, 0.08);
+            --border-hover: rgba(37, 99, 235, 0.3);
+            --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.03);
+            --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.06);
+            --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+            --container-max: 1200px;
         }
 
         * {
@@ -21,295 +135,886 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5.5rem;
+            scrollbar-gutter: stable;
+            overflow-x: clip;
+        }
+
         body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            display: flex;
+            color: var(--text-primary);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             min-height: 100vh;
-        }
-
-        /* Sidebar Styling */
-        aside {
-            width: 320px;
-            background-color: var(--sidebar-bg);
-            padding: 4rem 2.5rem;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid var(--border-color);
+            overflow-x: clip;
         }
 
-        .profile-section {
-            margin-bottom: 3rem;
+        /* ==========================================================================
+           Surrounding Reveal Effect (레이아웃 흔들림 없는 부드러운 페이드 & 슬라이드)
+           ========================================================================== */
+        .reveal-item {
+            opacity: 0;
+            transform: translate3d(0, 10px, 0);
+            transition:
+                opacity 0.75s var(--ease-out-smooth),
+                transform 0.75s var(--ease-out-smooth);
+            transition-delay: var(--delay, 0ms);
+            pointer-events: none;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-            color: #111827;
+        .reveal-item.reveal-fade-only {
+            transform: none;
         }
 
-        .job-title {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 2rem;
+        .reveal-item.reveal-from-right {
+            transform: translate3d(10px, 8px, 0);
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-bottom: 3rem;
+        body.is-revealed .reveal-item {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            pointer-events: auto;
         }
 
-        .contact-info a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 0.95rem;
+        /* ==========================================================================
+           Top Minimal Navigation Bar
+           ========================================================================== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(248, 249, 251, 0.86);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.75s var(--ease-out-smooth);
+        }
+
+        body.is-revealed .navbar {
+            border-bottom-color: var(--border-color);
+        }
+
+        .navbar-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            height: 4.25rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            transition: color 0.2s;
+            justify-content: space-between;
         }
 
-        .contact-info a:hover {
+        .brand-logo {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .brand-logo:hover {
+            opacity: 0.7;
+        }
+
+        .brand-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background-color: rgba(15, 23, 42, 0.05);
+        }
+
+        /* ==========================================================================
+           Desktop Left-Right Split Dashboard Layout
+           ========================================================================== */
+        .page-container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 5.25rem 2.5rem 4rem;
+            flex: 1;
+        }
+
+        .split-grid {
+            width: 100%;
+            display: grid;
+            /* minmax(0, ...)로 좌우 컬럼 폭을 고정하여 타이핑 중이나 전환 후에도 비율이 절대 흔들리지 않게 함 */
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+            gap: 4.5rem;
+            align-items: start;
+        }
+
+        /* Left Column: Sticky Profile, Typing Intro, About, Contact */
+        .left-column {
+            position: sticky;
+            top: 6.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            align-self: flex-start;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            background-color: var(--accent-soft);
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Ghost Sizer Overlay: 처음부터 최종 문구 크기를 투명하게 확보해 1px의 레이아웃 변화도 방지 */
+        .typing-wrapper {
+            display: grid;
+            margin-bottom: 1.5rem;
+        }
+
+        .typing-ghost,
+        .hero-title {
+            grid-area: 1 / 1;
+            font-size: clamp(1.6rem, 2.2vw, 2.02rem);
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: -0.035em;
+            color: var(--text-primary);
+            word-break: keep-all;
+        }
+
+        .typing-ghost {
+            visibility: hidden;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .typing-line {
+            display: block;
+            min-height: 1.4em;
+        }
+
+        @media (min-width: 1024px) {
+            .typing-line {
+                white-space: nowrap;
+            }
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.95em;
+            background-color: var(--accent-color);
+            margin-left: 4px;
+            vertical-align: -0.08em;
+            border-radius: 2px;
+            animation: cursor-blink 0.9s steps(2, start) infinite;
+            transition: opacity 0.5s ease;
+        }
+
+        body.cursor-settled .typing-cursor {
+            animation: cursor-blink 1.2s steps(2, start) infinite;
+            opacity: 0.75;
+        }
+
+        @keyframes cursor-blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .about-description {
+            color: var(--text-secondary);
+            font-size: 1.02rem;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            word-break: keep-all;
+            max-width: 48ch;
+        }
+
+        .about-description p + p {
+            margin-top: 0.6rem;
+        }
+
+        /* Contact Link List */
+        .contact-section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-width: 420px;
+        }
+
+        .contact-pill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.1rem;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            transition:
+                transform 0.2s var(--ease-out-smooth),
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                color: var(--accent-color) 0.2s ease;
+        }
+
+        .contact-pill-left {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .contact-pill:hover {
+            transform: translateX(3px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
             color: var(--accent-color);
         }
 
-        .sidebar-section h3 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .contact-pill svg.contact-icon {
+            width: 17px;
+            height: 17px;
             color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            transition: color 0.2s ease;
+            flex-shrink: 0;
         }
 
-        .skills-list {
+        .contact-pill:hover svg.contact-icon {
+            color: var(--accent-color);
+        }
+
+        .contact-pill-type {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            min-width: 68px;
+        }
+
+        .contact-pill-arrow {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .contact-pill:hover .contact-pill-arrow {
+            transform: translate(2px, -2px);
+            color: var(--accent-color);
+        }
+
+        /* ==========================================================================
+           Right Column: Experience & Awards Sections
+           ========================================================================== */
+        .right-column {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 2.75rem;
+            padding-left: 3rem;
+            border-left: 1px solid transparent;
+            transition: border-color 0.75s var(--ease-out-smooth);
+            transition-delay: 180ms;
+        }
+
+        body.is-revealed .right-column {
+            border-left-color: var(--border-color);
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
             gap: 0.5rem;
         }
 
-        .skill-tag {
-            background-color: var(--skill-bg);
-            padding: 0.3rem 0.7rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .section-title::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            display: inline-block;
         }
 
-        /* Main Content Styling */
-        main {
-            flex: 1;
-            padding: 4rem 4rem 4rem 5rem;
-            max-width: 900px;
+        .section-subtitle {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
         }
 
-        section {
-            margin-bottom: 4rem;
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #111827;
-            position: relative;
+        .card-item {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.35rem 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition:
+                transform 0.25s var(--ease-out-smooth),
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
-        .item {
-            margin-bottom: 2.5rem;
+        .card-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(15, 23, 42, 0.15);
+            box-shadow: var(--shadow-md);
         }
 
-        .item-header {
+        .card-top {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.4rem;
+            align-items: flex-start;
+            gap: 1rem;
         }
 
-        .item-title {
+        .card-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .card-title {
+            font-size: 1.06rem;
             font-weight: 700;
-            font-size: 1.2rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
         }
 
-        .item-date {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .card-subtitle {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
         }
 
-        .item-subtitle {
+        .card-badge {
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--accent-color);
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
+            background-color: var(--accent-soft);
+            padding: 0.28rem 0.75rem;
+            border-radius: 999px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
-        ul {
-            list-style-type: none;
+        .card-details {
+            list-style: none;
+            margin-top: 0.85rem;
+            padding-top: 0.85rem;
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
         }
 
-        li {
+        .card-details li {
             position: relative;
-            padding-left: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #4b5563;
+            padding-left: 1.1rem;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
         }
 
-        li::before {
-            content: "→";
+        .card-details li::before {
+            content: "•";
             position: absolute;
-            left: 0;
+            left: 0.2rem;
             color: var(--accent-color);
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        footer {
-            margin-top: 4rem;
+        /* ==========================================================================
+           Footer
+           ========================================================================== */
+        .site-footer {
+            max-width: var(--container-max);
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.75rem 2.5rem 2.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.84rem;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .container {
+        .replay-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.82rem;
+            cursor: pointer;
+            padding: 0.35rem 0.7rem;
+            border-radius: 8px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .replay-btn:hover {
+            color: var(--text-primary);
+            background-color: rgba(15, 23, 42, 0.05);
+        }
+
+        /* ==========================================================================
+           Responsive Adjustments (Tablet & Mobile)
+           ========================================================================== */
+        @media (max-width: 960px) {
+            .navbar-inner {
+                padding: 0 1.5rem;
+            }
+
+            .page-container {
+                padding: 3.5rem 1.5rem 3rem;
+            }
+
+            .split-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+
+            .left-column {
+                position: static;
+            }
+
+            .contact-links {
+                max-width: 100%;
+            }
+
+            .right-column {
+                padding-left: 0;
+                border-left: none;
+                gap: 3rem;
+            }
+
+            .site-footer {
+                padding: 1.75rem 1.5rem 2.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-container {
+                padding: 2.75rem 1.25rem 2.5rem;
+            }
+
+            .card-top {
                 flex-direction: column;
+                gap: 0.5rem;
             }
-            aside {
-                width: 100%;
-                padding: 3rem 2rem;
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
+
+            .nav-links a {
+                padding: 0.4rem 0.65rem;
+                font-size: 0.85rem;
             }
-            main {
-                padding: 3rem 2rem;
+
+            .site-footer {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-item {
+                transition-duration: 0.01ms !important;
+                transition-delay: 0ms !important;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- 왼쪽 사이드바: 프로필, 연락처, 기술 스택 -->
-    <aside>
-        <div class="profile-section">
-            <h1>송우섭 <br> USEOP0311</h1>
-            <div class="job-title">Daegu IL Science<br>High School</div>
+    <!-- 상단 미니멀 메뉴바 -->
+    <header class="navbar">
+        <div class="navbar-inner reveal-item reveal-fade-only" style="--delay: 0ms;">
+            <a href="#about" class="brand-logo" id="brand-logo">
+                <span class="brand-dot"></span>
+                <span id="brand-text">USEOP0311</span>
+            </a>
+            <nav aria-label="주요 메뉴">
+                <ul class="nav-links">
+                    <li><a href="#about">소개</a></li>
+                    <li><a href="#experience">경력·활동</a></li>
+                    <li><a href="#awards">수상</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="contact-info">
-            <a href="mailto:contact@example.com">📧 Email</a>
-            <a href="https://github.com/useop0311" target="_blank">💻 GitHub</a>
-            <a href="#" target="_blank">📝 Blog</a>
+    <!-- 메인 데스크톱 좌·우 분할 레이아웃 -->
+    <main class="page-container">
+        <div class="split-grid">
+
+            <!-- 왼쪽 영역: 타이핑 인트로 + 소개 + 연락처 하이퍼링크 -->
+            <section id="about" class="left-column">
+                <div class="profile-tag reveal-item" style="--delay: 40ms;">
+                    Profile &amp; Intro
+                </div>
+
+                <div class="typing-wrapper" aria-live="polite">
+                    <div class="typing-ghost" id="typing-ghost" aria-hidden="true"></div>
+                    <h1 class="hero-title" id="typing-container"></h1>
+                </div>
+
+                <div class="reveal-item" style="--delay: 100ms;">
+                    <div class="about-description" id="about-paragraphs"></div>
+                    <div class="contact-section-label">Contact &amp; Channels</div>
+                    <div class="contact-links" id="contact-links"></div>
+                </div>
+            </section>
+
+            <!-- 오른쪽 영역: 경력·활동 및 수상 내역 대시보드 -->
+            <div class="right-column">
+                <!-- 경력 및 활동 (Experience) 섹션 -->
+                <section id="experience" class="content-section reveal-item reveal-from-right" style="--delay: 200ms;">
+                    <div class="section-header">
+                        <h2 class="section-title">경력 · 활동</h2>
+                        <span class="section-subtitle">Experience</span>
+                    </div>
+                    <div class="card-list" id="experience-list"></div>
+                </section>
+
+                <!-- 수상 내역 (Awards) 섹션 -->
+                <section id="awards" class="content-section reveal-item reveal-from-right" style="--delay: 340ms;">
+                    <div class="section-header">
+                        <h2 class="section-title">수상</h2>
+                        <span class="section-subtitle">Awards &amp; Honors</span>
+                    </div>
+                    <div class="card-list" id="awards-list"></div>
+                </section>
+            </div>
+
         </div>
-
-        <div class="sidebar-section">
-            <h3>Skills</h3>
-            <div class="skills-list">
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">Spring Boot</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Git</span>
-            </div>
-        </div>
-    </aside>
-
-    <!-- 오른쪽 메인 콘텐츠: 소개, 경력, 수상, 프로젝트 -->
-    <main>
-        <section>
-            <h2>소개 (About Me)</h2>
-            <p>
-                안녕하세요. 문제 해결과 최적화에 관심이 많은 개발자입니다. 
-                사용자에게 안정적인 서비스를 제공하기 위해 노력하며, 효율적이고 확장 가능한 코드 작성을 지향합니다.
-                새로운 기술을 배우고 팀과 함께 성장하는 것을 즐깁니다.
-            </p>
-        </section>
-
-        <section>
-            <h2>경력 (Work Experience)</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">OOO 회사</div>
-                    <div class="item-date">2023.01 - 현재</div>
-                </div>
-                <div class="item-subtitle">백엔드 개발자</div>
-                <ul>
-                    <li>대규모 트래픽 처리를 위한 마이크로서비스 아키텍처(MSA) 설계 및 구현</li>
-                    <li>결제 시스템 연동 및 주문 API 개발로 서비스 안정성 향상</li>
-                    <li>데이터베이스 쿼리 튜닝 및 캐싱 전략 도입 (조회 성능 30% 개선)</li>
-                </ul>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">XXX 스타트업</div>
-                    <div class="item-date">2021.03 - 2022.12</div>
-                </div>
-                <div class="item-subtitle">소프트웨어 엔지니어</div>
-                <ul>
-                    <li>핵심 비즈니스 로직에 대한 RESTful API 설계 및 개발</li>
-                    <li>AWS 인프라 기반 배포 및 CI/CD 파이프라인 구축</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>수상이력 (Awards & Honors)</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">제 O회 OOO 해커톤 최우수상</div>
-                    <div class="item-date">2022.08</div>
-                </div>
-                <ul>
-                    <li>주최: OOO 재단 / 주제: 공공 데이터 활용 서비스</li>
-                    <li>역할: 백엔드 API 서버 개발 및 인프라 구축</li>
-                </ul>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">교내 프로그래밍 경진대회 은상</div>
-                    <div class="item-date">2021.11</div>
-                </div>
-                <ul>
-                    <li>알고리즘 및 자료구조 활용 능력 우수</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>프로젝트 (Projects)</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">개인 포트폴리오 웹사이트</div>
-                    <div class="item-date">2024.01 - 현재</div>
-                </div>
-                <div class="item-subtitle">HTML, CSS, Git</div>
-                <ul>
-                    <li>이력서 및 포트폴리오를 제공하는 정적 웹사이트 구축</li>
-                    <li>반응형 웹 디자인 적용으로 모바일 접근성 향상</li>
-                </ul>
-            </div>
-        </section>
-
-        <footer>
-            &copy; 2026 0311. All rights reserved.
-        </footer>
     </main>
-</div>
 
+    <!-- 하단 푸터 -->
+    <footer class="site-footer reveal-item reveal-fade-only" style="--delay: 460ms;">
+        <span id="copyright-text">&copy; 2026 Useop Song (0311). All rights reserved.</span>
+        <button type="button" class="replay-btn" id="replay-typing-btn" title="타이핑 모션 다시 보기">
+            ↻ 인트로 모션 다시 보기
+        </button>
+    </footer>
+
+    <script>
+        /**
+         * ============================================================================
+         * 웹사이트 렌더링 및 한글 자소 조합 타이핑 엔진
+         * ============================================================================
+         */
+        const ICONS = {
+            email: `<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+            github: `<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>`,
+            instagram: `<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>`,
+            link: `<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`
+        };
+
+        // 1. SITE_DATA 기반으로 정적 요소 렌더링
+        function renderSiteContent() {
+            document.getElementById("brand-text").textContent = SITE_DATA.brand || "USEOP0311";
+            const year = new Date().getFullYear();
+            document.getElementById("copyright-text").innerHTML = `&copy; ${year} ${escapeHtml(SITE_DATA.copyrightName || "0311")}. All rights reserved.`;
+
+            // 타이핑 영역 레이아웃 고정용 Ghost 텍스트 렌더링
+            const ghostEl = document.getElementById("typing-ghost");
+            const lines = SITE_DATA.typingLines || [];
+            ghostEl.innerHTML = lines
+                .map((line, idx) => {
+                    const cursorSpan = idx === lines.length - 1 ? `<span class="typing-cursor"></span>` : "";
+                    return `<span class="typing-line">${escapeHtml(line)}${cursorSpan}</span>`;
+                })
+                .join("");
+
+            // 소개 문단 렌더링
+            const aboutParagraphsEl = document.getElementById("about-paragraphs");
+            if (SITE_DATA.about && Array.isArray(SITE_DATA.about.paragraphs) && SITE_DATA.about.paragraphs.length > 0) {
+                aboutParagraphsEl.innerHTML = SITE_DATA.about.paragraphs
+                    .map(p => `<p>${escapeHtml(p)}</p>`)
+                    .join("");
+                aboutParagraphsEl.style.display = "block";
+            } else {
+                aboutParagraphsEl.style.display = "none";
+            }
+
+            // 연락처 및 소셜 하이퍼링크 렌더링
+            const contactLinksEl = document.getElementById("contact-links");
+            if (SITE_DATA.about && Array.isArray(SITE_DATA.about.links)) {
+                contactLinksEl.innerHTML = SITE_DATA.about.links.map(link => {
+                    const isExternal = link.url.startsWith("http");
+                    const targetAttr = isExternal ? `target="_blank" rel="noopener noreferrer"` : "";
+                    const iconSvg = ICONS[link.icon] || ICONS.link;
+                    const typeTag = link.type ? `<span class="contact-pill-type">${escapeHtml(link.type)}</span>` : "";
+                    return `
+                        <a href="${escapeAttr(link.url)}" class="contact-pill" ${targetAttr}>
+                            <span class="contact-pill-left">
+                                ${iconSvg}
+                                ${typeTag}
+                                <span>${escapeHtml(link.label)}</span>
+                            </span>
+                            <span class="contact-pill-arrow" aria-hidden="true">↗</span>
+                        </a>
+                    `;
+                }).join("");
+            }
+
+            // 경력·활동 렌더링
+            const expListEl = document.getElementById("experience-list");
+            expListEl.innerHTML = (SITE_DATA.experiences || []).map(item => renderCardItem(item, item.period)).join("");
+
+            // 수상 내역 렌더링
+            const awardsListEl = document.getElementById("awards-list");
+            awardsListEl.innerHTML = (SITE_DATA.awards || []).map(item => renderCardItem(item, item.date)).join("");
+        }
+
+        function renderCardItem(item, badgeText) {
+            const subtitleHtml = item.subtitle
+                ? `<div class="card-subtitle">${escapeHtml(item.subtitle)}</div>`
+                : "";
+            const badgeHtml = badgeText
+                ? `<span class="card-badge">${escapeHtml(badgeText)}</span>`
+                : "";
+            const detailsHtml = Array.isArray(item.details) && item.details.length > 0
+                ? `<ul class="card-details">${item.details.map(d => `<li>${escapeHtml(d)}</li>`).join("")}</ul>`
+                : "";
+
+            return `
+                <article class="card-item">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h3 class="card-title">${escapeHtml(item.title)}</h3>
+                            ${subtitleHtml}
+                        </div>
+                        ${badgeHtml}
+                    </div>
+                    ${detailsHtml}
+                </article>
+            `;
+        }
+
+        function escapeHtml(str) {
+            return String(str ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function escapeAttr(str) {
+            return escapeHtml(str);
+        }
+
+        // 2. 한글 초·중·종성 자소 단위 분해 및 조합 프레임 생성기
+        const CHO_CHARS = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+        const COMPOUND_JUNG_FIRST = {
+            9: 8,   // ㅘ -> ㅗ
+            10: 8,  // ㅙ -> ㅗ
+            11: 8,  // ㅚ -> ㅗ
+            14: 13, // ㅝ -> ㅜ
+            15: 13, // ㅞ -> ㅜ
+            16: 13, // ㅟ -> ㅜ
+            19: 18  // ㅢ -> ㅡ
+        };
+        const COMPOUND_JONG_FIRST = {
+            3: 1,   // ㄳ -> ㄱ
+            5: 4,   // ㄵ -> ㄴ
+            6: 4,   // ㄶ -> ㄴ
+            9: 8,   // ㄺ -> ㄹ
+            10: 8,  // ㄻ -> ㄹ
+            11: 8,  // ㄼ -> ㄹ
+            12: 8,  // ㄽ -> ㄹ
+            13: 8,  // ㄾ -> ㄹ
+            14: 8,  // ㄿ -> ㄹ
+            15: 8,  // ㅀ -> ㄹ
+            18: 17  // ㅄ -> ㅂ
+        };
+
+        function composeHangul(cho, jung, jong = 0) {
+            return String.fromCharCode(0xAC00 + (cho * 588) + (jung * 28) + jong);
+        }
+
+        function buildTypingFrames(line) {
+            const frames = [];
+            let confirmed = "";
+
+            for (const ch of line) {
+                const code = ch.charCodeAt(0);
+                if (code >= 0xAC00 && code <= 0xD7A3) {
+                    const offset = code - 0xAC00;
+                    const cho = Math.floor(offset / 588);
+                    const jung = Math.floor((offset % 588) / 28);
+                    const jong = offset % 28;
+
+                    frames.push(confirmed + CHO_CHARS[cho]);
+
+                    if (COMPOUND_JUNG_FIRST[jung] !== undefined) {
+                        frames.push(confirmed + composeHangul(cho, COMPOUND_JUNG_FIRST[jung], 0));
+                    }
+
+                    frames.push(confirmed + composeHangul(cho, jung, 0));
+
+                    if (jong > 0) {
+                        if (COMPOUND_JONG_FIRST[jong] !== undefined) {
+                            frames.push(confirmed + composeHangul(cho, jung, COMPOUND_JONG_FIRST[jong]));
+                        }
+                        frames.push(confirmed + composeHangul(cho, jung, jong));
+                    }
+
+                    confirmed += ch;
+                } else {
+                    confirmed += ch;
+                    frames.push(confirmed);
+                }
+            }
+            return frames;
+        }
+
+        // 3. 타이핑 애니메이션 실행 및 주변 요소 Reveal 처리
+        let activeTypingRunId = 0;
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function runTypingIntro() {
+            const runId = ++activeTypingRunId;
+            const container = document.getElementById("typing-container");
+            const lines = SITE_DATA.typingLines || [];
+            const speed = SITE_DATA.typingSpeed || { charDelay: 32, linePause: 220, revealDelay: 180 };
+
+            document.body.classList.remove("is-revealed", "cursor-settled");
+            container.innerHTML = "";
+
+            const lineSpans = lines.map(() => {
+                const span = document.createElement("span");
+                span.className = "typing-line";
+                container.appendChild(span);
+                return span;
+            });
+
+            const cursor = document.createElement("span");
+            cursor.className = "typing-cursor";
+            cursor.setAttribute("aria-hidden", "true");
+
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            if (prefersReducedMotion) {
+                lines.forEach((line, idx) => {
+                    lineSpans[idx].textContent = line;
+                });
+                if (lineSpans.length > 0) {
+                    lineSpans[lineSpans.length - 1].appendChild(cursor);
+                }
+                document.body.classList.add("is-revealed", "cursor-settled");
+                return;
+            }
+
+            for (let i = 0; i < lines.length; i++) {
+                if (runId !== activeTypingRunId) return;
+                const currentSpan = lineSpans[i];
+                currentSpan.appendChild(cursor);
+
+                const frames = buildTypingFrames(lines[i]);
+                for (const frameText of frames) {
+                    if (runId !== activeTypingRunId) return;
+                    currentSpan.textContent = frameText;
+                    currentSpan.appendChild(cursor);
+                    await sleep(speed.charDelay);
+                }
+
+                if (i < lines.length - 1) {
+                    await sleep(speed.linePause);
+                }
+            }
+
+            if (runId !== activeTypingRunId) return;
+            await sleep(speed.revealDelay);
+
+            if (runId !== activeTypingRunId) return;
+            document.body.classList.add("is-revealed", "cursor-settled");
+        }
+
+        // 초기화 및 이벤트 바인딩
+        document.addEventListener("DOMContentLoaded", () => {
+            renderSiteContent();
+            runTypingIntro();
+
+            document.getElementById("replay-typing-btn").addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setTimeout(() => runTypingIntro(), 200);
+            });
+        });
+    </script>
 </body>
 </html>
